@@ -8,7 +8,7 @@ import me.shaoown.clean.rx.RxBus;
  * Created by black on 2017/3/21.
  */
 
-public class MockUi implements IUi {
+public class MockUi implements IUi<IRequest> {
 
     @Override
     public void request(IRequest data) {

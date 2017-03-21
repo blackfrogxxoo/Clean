@@ -5,6 +5,7 @@ import java.util.Date;
 import me.shaoown.clean.base.IAction1Request;
 import me.shaoown.clean.base.IClient;
 import me.shaoown.clean.base.IAction0Request;
+import me.shaoown.clean.base.IRequest;
 import me.shaoown.clean.base.IUi;
 import me.shaoown.clean.rx.RxBus;
 import rx.Subscription;
@@ -39,7 +40,7 @@ public class TestDemo {
             }
         };
         client.register();
-        IUi ui = RxBus.INSTANCE::post;
+        IUi<IRequest> ui = RxBus.INSTANCE::post;
         ui.request((IAction0Request) () -> (Action0) () -> System.out.println("receive response"));
     }
 
@@ -65,7 +66,7 @@ public class TestDemo {
             }
         };
         client.register();
-        IUi ui = RxBus.INSTANCE::post;
+        IUi<IRequest> ui = RxBus.INSTANCE::post;
         ui.request(new IAction1Request() {
             @Override
             public Action1 getAction1() {
