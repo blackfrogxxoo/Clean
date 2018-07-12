@@ -17,7 +17,7 @@ public enum RxBus {
         bus.onNext(o);
     }
 
-    public Observable<Object> toObserverable() {
+    public Observable<Object> toObservable() {
         return bus;
     }
 }

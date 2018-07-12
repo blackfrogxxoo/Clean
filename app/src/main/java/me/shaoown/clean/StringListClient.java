@@ -20,7 +20,7 @@ public class StringListClient implements IClient {
     List<String> strings = new ArrayList<>();
     @Override
     public void register() {
-        mSubscription = RxBus.INSTANCE.toObserverable()
+        mSubscription = RxBus.INSTANCE.toObservable()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<Object>() {
                     @Override

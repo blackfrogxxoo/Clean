@@ -23,7 +23,7 @@ public class TestDemo {
             private Subscription suscription;
             @Override
             public void register() {
-                suscription = RxBus.INSTANCE.toObserverable()
+                suscription = RxBus.INSTANCE.toObservable()
                         .subscribe(data -> {
                             if(data instanceof IAction0Request) {
                                 System.out.println("receive request");
@@ -49,7 +49,7 @@ public class TestDemo {
             private Subscription suscription;
             @Override
             public void register() {
-                suscription = RxBus.INSTANCE.toObserverable()
+                suscription = RxBus.INSTANCE.toObservable()
                         .subscribe(data -> {
                             if(data instanceof IAction1Request) {
                                 System.out.println("receive request");

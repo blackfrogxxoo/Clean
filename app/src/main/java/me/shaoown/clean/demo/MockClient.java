@@ -15,7 +15,7 @@ public class MockClient implements IClient {
 
     @Override
     public void register() {
-        subscription = RxBus.INSTANCE.toObserverable()
+        subscription = RxBus.INSTANCE.toObservable()
                 .subscribe(o -> {
                     if(o instanceof MockRequest) {
                         ((MockRequest) o).getAction1().call(new Date());
